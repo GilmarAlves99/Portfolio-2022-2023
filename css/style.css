@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Poppins:wght@100&family=Righteous&family=Roboto+Serif:opsz,wght@8..144,100&display=swap');
+:root {
+    --fontPrimaria: 'Poppins', sans-serif;
+    --font: 'Passion One', cursive;
+    /*ja ta*/
+    --font2: 'Righteous', cursive;
+    /*ja ta*/
+    --resto: 'Roboto Serif', serif;
+    --fontSize: 32px;
+    --fontmedia: 24px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.icons {
+    width: 10px;
+    height: 10px;
+    color: #008cff
+}
+
+body {
+    box-sizing: border-box;
+    font-family: var(--fontPrimaria);
+    background-color: #0a0a0a;
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+div.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 8vh;
+    top: 10px;
+    position: relative;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-list li {
+    font-size: var(--fontmedia);
+    letter-spacing: 3px;
+    margin-left: 15px;
+}
+
+.nav-list li a:hover {
+    border-bottom: 2px solid rgb(0, 204, 255);
+}
+
+.logo {
+    font-size: var(--fontSize);
+    letter-spacing: 4px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.logo::before {
+    content: "<";
+}
+
+.logo::after {
+    content: ">";
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.sobre {
+    position: relative;
+    top: 20px;
+    width: 80%;
+    background-color: rgba(0, 0, 255, 0.055);
+}
+
+.sobre i {
+    font-size: var(--fontSize);
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: -10px;
+}
+
+.sobre h2,
+.sobre h3,
+.sobre h4 {
+    position: relative;
+    left: 20px;
+    font-size: var(--font);
+    animation-name: example2;
+    animation-duration: 8s;
+}
+
+h1.nome {
+    animation-name: example;
+    animation-duration: 3s;
+    width: 800px;
+    position: relative;
+    letter-spacing: 5px;
+    left: 50px;
+    font-size: 3em;
+}
+
+h1.nome::before {
+    position: absolute;
+    content: "Desenvolvedor Front-End";
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    margin: -20px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blinkCursor 800ms steps(40) infinite normal, typing 4s steps(40) 3s normal both;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50%;
+    }
+}
+
+@keyframes blinkCursor {
+    0%,
+    80% {
+        border-right-color: transparent;
+    }
+    80% {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+@keyframes example {
+    from {
+        left: -10px;
+        opacity: 0;
+    }
+    to {
+        left: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes example2 {
+    0% {
+        left: -10px;
+        opacity: -200;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width:999px) {
+    body {
+        overflow-x: hidden;
+    }
+    .logo {
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+    .nav-list {
+        position: absolute;
+        top: 7vh;
+        width: 100vw;
+        height: 75vh;
+        right: 0;
+        background-color: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 100;
+        transform: translateX(100%);
+    }
+    .nav-list li {
+        margin-left: 0px;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
