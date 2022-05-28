@@ -1,0 +1,41 @@
+/*Animação na area que atuo/pretendo*/
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 45%;
+        border-right: 5px solid rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes blinkCursor {
+    0%,
+    80% {
+        border-right-color: transparent;
+    }
+    80% {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+
+/*Animação no meu nome*/
+
+@keyframes animanome {
+    from {
+        left: -50px;
+        opacity: 0;
+    }
+}
+
+
+/*  animação na parte onde colo cidade,curso...*/
+
+@keyframes animaSobre {
+    from {
+        left: -120px;
+        opacity: 0;
+    }
+}
