@@ -11,8 +11,7 @@
 }
 
 @keyframes blinkCursor {
-    0%,
-    80% {
+    20% {
         border-right-color: transparent;
     }
     80% {
@@ -25,8 +24,8 @@
 
 @keyframes animanome {
     from {
-        left: -50px;
-        opacity: 0;
+        left: -120px;
+        opacity: -220;
     }
 }
 
@@ -36,6 +35,6 @@
 @keyframes animaSobre {
     from {
         left: -120px;
-        opacity: 0;
+        opacity: -220;
     }
 }
