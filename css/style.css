@@ -12,6 +12,10 @@
             --espaco: 3px;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             box-sizing: border-box;
             font-family: var(--fontPrimaria);
@@ -42,8 +46,7 @@
             flex-direction: row;
             justify-content: space-around;
             top: 0px;
-            height: 80px;
-            position: relative;
+            height: 60px;
         }
         
         .nav-list {
@@ -107,7 +110,7 @@
         }
         
         .sobre {
-            padding: 50px 0px;
+            padding: 40px 0;
             position: relative;
             display: flex;
             width: 100%;
@@ -116,20 +119,17 @@
         }
         
         .parte1 {
-            padding: 50px 0;
-            display: flex;
             flex: 1;
-            width: 70%;
-            flex-direction: column;
-        }
-        
-        .parte2 {
-            animation-name: animaSobre;
-            animation-duration: 7s;
-            display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            width: 70%;
+        }
+        
+        .parte2 {
+            text-align: center;
+            animation-name: animaSobre;
+            animation-duration: 7s;
             flex: 1;
         }
         
@@ -148,6 +148,12 @@
             background-size: cover;
             background-blend-mode: darken;
             transition: 1s
+        }
+        
+        .parte3 {
+            position: relative;
+            width: 100%;
+            background-color: aquamarine;
         }
         
         .icons {
@@ -194,21 +200,109 @@
             animation: blinkCursor 800ms steps(40) infinite normal, typing 3s steps(40) 3s normal both;
         }
         
+        .animacoes {
+            animation-name: animaSobre;
+            animation-duration: 7s;
+        }
+        
         .projetos {
-            background-color: #002d52;
+            text-align: center;
             width: 100%;
-            height: 600px;
+            height: 100%;
             position: relative;
-            margin-top: 50px;
+            background-color: #002d52;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
         
+        .meusprojetos {
+            box-shadow: 0px 0px 10px #011729;
+            margin: 10px;
+            background: url('../img/GITHUB-PROFILE2.png') center no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            border-radius: 00px;
+            font-weight: 700;
+            position: relative;
+            width: 350px;
+            height: 400px;
+        }
+        
+        .meusprojetos:nth-child(2) {
+            background: url('../img/codeapp.png') center no-repeat;
+        }
+        
+        .meusprojetos:nth-child(3) {
+            background: url('../img/webword.png') center no-repeat;
+        }
+        
+        .meusprojetos:nth-child(4) {
+            background: url('../img/pariquera.png') center no-repeat;
+        }
+        
+        .conteudo-projetos {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #002d52;
+            border-top-left-radius: 20px;
+            transform: translateY(70px);
+            transition: transform 0.25s;
+        }
+        
+        .conteudo-projetos::before {
+            content: "";
+            position: absolute;
+            top: -47px;
+            right: -35px;
+            z-index: -5;
+            width: 100px;
+            height: 100px;
+            transform: rotate(-175deg);
+            border-radius: 50%;
+            box-shadow: inset 48px 48px #002d52;
+        }
+        
+        .conteudo-projetos h3,
+        .conteudo-projetos span,
+        .conteudo-projetos p {
+            padding: 0 5px;
+        }
+        
+        .conteudo-projetos h3 {
+            font-size: 1.1em;
+            line-height: 5px;
+            letter-spacing: 0px;
+        }
+        
+        .conteudo-projetos span {
+            display: block;
+            font-size: 14px;
+        }
+        
+        .conteudo-projetos p {
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        
+        .meusprojetos:hover .conteudo-projetos {
+            transform: translateY(0);
+        }
+        
+        .meusprojetos:hover .conteudo-projetos p {
+            opacity: 1;
+            transition-delay: 0.25s;
+        }
+        
         .roadmap {
             width: 100%;
             position: relative;
-            margin-top: 50px;
+            padding: 50px 0;
+            background-color: #002d52;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -221,7 +315,6 @@
             flex-wrap: wrap;
             width: 500px;
             margin: 20px;
-            background-color: #002d52;
             height: 500px;
             flex-direction: column;
             align-items: center;
@@ -348,7 +441,7 @@
         }
         
         footer {
-            background-color: aqua;
+            background-color: #002d52;
             width: 100%;
             top: 0px;
             height: 300px;
@@ -417,9 +510,10 @@
                 text-align: center;
                 width: 80%;
             }
+            /*
             .sobre {
-                padding: 20px 0px;
-            }
+                padding: 90px 0px;
+            }*/
             h1.nome {
                 font-size: 2em;
                 left: 20px;
@@ -430,8 +524,9 @@
                 font-size: 16px;
             }
             .nav-list {
+                display: none;
                 background-color: red;
-                position: absolute;
+                /*
                 top: 7vh;
                 width: 10vw;
                 height: 70vh;
@@ -439,8 +534,8 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
-                z-index: 100;
-                transform: translateX(100%);
+                z-index: 1;
+                transform: translateX(100%);*/
             }
             .nav-list li {
                 margin-left: 0px;
