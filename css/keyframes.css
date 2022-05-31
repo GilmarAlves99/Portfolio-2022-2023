@@ -1,11 +1,11 @@
-/*Animação na area que atuo/pretendo
+/*Animação na area que atuo/pretendo*/
 
 @keyframes typing {
     from {
         width: 0;
     }
     to {
-        width: 45%;
+        width: 90%;
         border-right: 5px solid rgba(255, 255, 255, 0);
     }
 }
@@ -19,8 +19,15 @@
     }
 }
 
+@keyframes animanomebefore {
+    from {
+        left: -120px;
+        opacity: -220;
+    }
+}
 
-/*Animação no meu nome
+
+/*Animação no meu nome*/
 
 @keyframes animanome {
     from {
@@ -30,11 +37,11 @@
 }
 
 
-/*  animação na parte onde colo cidade,curso...
+/*  animação na parte onde colo cidade,curso...*/
 
 @keyframes animaSobre {
     from {
         left: -120px;
         opacity: -220;
     }
-}*/
+}
