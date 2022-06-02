@@ -1,0 +1,111 @@
+ @media (max-width:999px) {
+     body {
+         overflow-x: hidden;
+     }
+     h1.nome {
+         font-size: 1.4rem;
+     }
+     span.animanomebefore::before {
+         font-size: 1.2rem;
+     }
+     .logo {
+         position: relative;
+         text-align: center;
+         right: -25px;
+         width: 80%;
+     }
+     .nav-list {
+         position: absolute;
+         top: 45px;
+         width: 100vw;
+         height: 80vh;
+         flex-direction: column;
+         align-items: center;
+         justify-content: space-around;
+         z-index: 50;
+         background-color: #444444;
+         right: 0;
+         transform: translate(100%);
+         transition: transform 0.3s ease-in;
+         /*  ease-in uma chegada suave*/
+     }
+     .nav-list li a:hover:after {}
+     .nav-list li {
+         margin-left: 0px;
+         opacity: 1;
+     }
+     .mobile-menu {
+         display: block;
+     }
+     .parte1 {
+         width: 450px;
+     }
+     .imgGil {
+         width: 200px;
+         height: 200px;
+     }
+ }
+ 
+ @media (max-width:800px) {
+     body {
+         overflow-x: hidden;
+     }
+     .parte1 {
+         width: 100%;
+     }
+     .logo {
+         right: -25px;
+         float: right;
+         width: 80%;
+     }
+     h1.nome {
+         font-size: 34px;
+         left: 30px;
+     }
+     span.animanomebefore::before {
+         top: -15px;
+         left: 20px;
+         letter-spacing: 2px;
+         font-size: 1.5rem;
+     }
+     .nav-list li {
+         margin-left: 0px;
+         opacity: 1;
+     }
+     .mobile-menu {
+         display: block;
+     }
+     .roadmap h1 {
+         font-size: var(--fontmedia);
+     }
+     .meusprojetos {
+         width: 500px;
+     }
+     .contatos {
+         flex-direction: column;
+         align-items: center;
+     }
+     .contatos form input {
+         width: 100%;
+     }
+ }
+ 
+ @media (max-width:550px) {
+     body {
+         overflow-x: hidden;
+     }
+     .parte2 {
+         height: 500px;
+     }
+     h1.nome {
+         top: 20px;
+         font-size: 2rem;
+         left: 20px;
+     }
+     .contatos {
+         flex-direction: column;
+     }
+     form input {
+         width: 100%;
+     }
+ }

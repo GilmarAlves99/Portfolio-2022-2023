@@ -1,4 +1,3 @@
-/*
 //toda classe tem um metodo constructor()
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
@@ -31,4 +30,4 @@ const mobileNavbar = new MobileNavbar(
     ".nav-list li",
 );
 
-mobileNavbar.init();*/
+mobileNavbar.init();

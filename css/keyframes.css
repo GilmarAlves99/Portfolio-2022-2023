@@ -45,3 +45,21 @@
         opacity: -220;
     }
 }
+
+[data-anime] {
+    opacity: 0;
+    transition: .8s;
+}
+
+[data-anime="left"] {
+    transform: translate3d(-10%, 0, 0);
+}
+
+[data-anime="right"] {
+    transform: translate3d(10%, 0, 0);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
