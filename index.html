@@ -6,54 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gilmar Zezilia Alves - Portfolio</title>
-    <meta name="description" content="Brandon's Baseball Cards provides a large selection of
-    vintage and modern baseball cards for sale.
-    We also offer daily baseball news and events.">
-    <meta name="description" content="Gilmar Zezilia Alves portfolio - front end web developer ">
+    <meta name="keywords" content="Portfolio, Gilmar Zezilia Alves,Front End, Html, Css, JavaScript, Web Design, Developer Front End">
+    <meta name="description" content="Portfolio para mostrar minhas habilidades, projetos e experiências na area de front-End e Back-End">
+    <meta name="author" content="Gilmar Zezilia Alves portfolio - front end web developer ">
+    <meta name="robots" content="index">
+
+    <!-- Social Meta Tags
+    Para o facebook (og-padrao para redes sociais)-->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gilmaralves.dev.br/">
+    <meta property="og:title" content="Gilmar Zezilia Alves Dev Front-End">
+    <meta property="og:description" content="< Conheça mais sobre mim />">
+    <meta property="og:image" content="img/capturaDeTelaMobile.png">
+
+    <!-- Social Meta Tags
+    Para o Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gilmaralves.dev.br/">
+    <meta property="twitter:title" content="Gilmar Zezilia Alves Dev Front-End">
+    <meta property="twitter:description" content="< Conheça mais sobre mim />">
+    <meta property="twitter:image" content="img/capturaDeTelaMobile.png">
+
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="css/keyframes.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="css/mediaScreen.css" media="screen">
-
-    <link href="IMG/glasses.png" sizes="96X96" type="image/x-icon" rel="shortcut icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon_io/android-chrome-192x192.png" />
 
 </head>
 
 <body>
+    <header class="content">
+        <div id="header">
 
+            <a id="logo" href="/">
+                < />
+            </a>
 
-
-    <header class="content ">
-        <!-- 
-
-        -->
-
-        <nav>
-
-            <a href="/" class="logo">GZA</a>
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-list">
-
-                <li><a href="#sobre">Inicio</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#redes">Redes Sociais</a></li>
-
-
-
-            </ul>
-        </nav>
+            <nav id="nav">
+                <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><span class="hamburguer"></span></button>
+                <ul id="menu" role="menu">
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#redes">Redes Sociais</a></li>
+                </ul>
+            </nav>
+        </div>
 
         <div class="sobre meio" id="sobre">
 
             <div class="parte1">
-                <span class="animanomebefore">
 
-                        </span>
                 <h1 class="nome">Gilmar Zezilia Alves</h1>
 
                 <div class="sobreInf">
@@ -75,8 +78,11 @@
             </div>
 
         </div>
+
     </header>
+
     <div class=" meio">
+
         <main class="projetos" id="projetos" data-anime="left">
 
             <h1>PORTIFÓLIO</h1>
@@ -130,10 +136,12 @@
                 <p class="linhaprofissoes2"></p>
             </div>
         </div>
-        <div class="contatos" id="contato">
-            <!--Estou disponível para novos projetos e contratações no momento. Entre em contato comigo para que possamos marcar uma conversa 👋
+
+        <div class="contatos" id="contato" data-anime="left">
+            <!-- 
+            <Estou disponível para novos projetos e contratações no momento. Entre em contato comigo para que possamos marcar uma conversa 👋
 -->
-            <form action="" data-anime="left">
+            <form action="">
                 <label for="nome">Nome</label>
                 <input type="text" placeholder="Ex: Carlos">
                 <label for="nome">Email</label>
@@ -141,7 +149,7 @@
                 <label for="nome">Mensagem</label>
                 <input type="text" placeholder="Olá Gilmar, estou entrando em contato por...">
             </form>
-            <footer data-anime="right">
+            <footer>
                 <div class="redesSociais" id="redes">
                     <h4>GilmarAlves@gmail.com</h4>
                     <h4>Gilmar Zezilia Alves </h4>
@@ -152,6 +160,7 @@
                     <a href="https://www.linkedin.com/in/gilmar-zezilia-alves-336610182/" target="_blank"><i class="uil uil-linkedin icons"></i></a>
                 </div>
             </footer>
+
         </div>
 
     </div>
@@ -159,6 +168,7 @@
     <script src="js/js-scroll.js"></script>
 
     <script src="js/mobile-menu-navbar.js"></script>
+
 </body>
 
 </html>

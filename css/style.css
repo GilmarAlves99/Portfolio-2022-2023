@@ -1,480 +1,455 @@
-        @import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Poppins:wght@100&family=Righteous&family=Roboto+Serif:opsz,wght@8..144,100&display=swap');
-         :root {
-            --fontPrimaria: 'Poppins', sans-serif;
-            --font: 'Passion One', cursive;
-            /*ja ta*/
-            --font2: 'Righteous', cursive;
-            /*ja ta*/
-            --resto: 'Roboto Serif', serif;
-            --fontSize: 32px;
-            --fontmedia: 24px;
-            --fontMobile: 18px;
-            --espaco: 2px;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            overflow-x: hidden;
-            box-sizing: border-box;
-            background-color: #171717;
-            font-family: var(--fontPrimaria);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .content {
-            color: #EDEDED;
-            min-height: 100vh;
-            width: 100%;
-        }
-        
-        .meio {
-            margin: 0 auto;
-            position: relative;
-            width: 90%;
-            height: 100%;
-        }
-        
-        nav {
-            background-color: #DA0037;
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            justify-content: space-around;
-            top: 0px;
-            height: 60px;
-        }
-        
-        .nav-list {
-            list-style-type: none;
-            display: flex;
-        }
-        
-        .nav-list li {
-            font-size: var(--fontmedia);
-            letter-spacing: var(--espaco);
-            margin-left: 20px;
-        }
-        
-        .nav-list li a,
-        .logo {
-            font-weight: bolder;
-            position: relative;
-            text-decoration: none;
-            color: #fff;
-        }
-        
-        .nav-list li a::after {
-            content: "";
-            position: absolute;
-            background-color: #171717;
-            width: 0;
-            height: var(--espaco);
-            left: 0;
-            bottom: -5px;
-            transition: 0.5s;
-        }
-        
-        .nav-list li a:hover:after {
-            width: 100%;
-            transition: 0.6s;
-            background-color: #EDEDED;
-        }
-        
-        .logo {
-            font-size: var(--fontSize);
-            letter-spacing: 4px;
-            text-align: left;
-            text-transform: uppercase;
-        }
-        
-        .logo::before {
-            content: "<";
-        }
-        
-        .logo::after {
-            content: ">";
-        }
-        
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
-        }
-        
-        .mobile-menu div {
-            width: var(--fontSize);
-            height: 2px;
-            background-color: #fff;
-            margin: 8px;
-        }
-        
-        .sobre {
-            background-color: #171717;
-            padding-top: 90px;
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .parte1 {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            width: 60%;
-        }
-        
-        .parte2 {
-            display: flex;
-            flex: 1;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            animation-name: animaSobre;
-            animation-duration: 7s;
-        }
-        
-        .parte2 p {
-            font-size: var(--fontMobile);
-            letter-spacing: var(--espaco);
-            font-weight: 600;
-            width: 90%;
-            text-align: center;
-        }
-        
-        .imgGil {
-            box-shadow: 0px 0px 20px rgb(10, 10, 10);
-            border-radius: 100%;
-            width: 240px;
-            height: 240px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-blend-mode: darken;
-            transition: 1s
-        }
-        
-        .icons {
-            font-size: var(--fontSize);
-            margin-left: 5px;
-            letter-spacing: 10px;
-            color: #EDEDED;
-        }
-        
-        .sobreInf p {
-            left: 30px;
-            font-weight: bolder;
-            font-size: var(--fontMobile);
-            line-height: 0px;
-            animation-name: animaSobre;
-            animation-duration: 7s;
-        }
-        
-        h1.nome {
-            animation-name: animanome;
-            animation-duration: 7s;
-            width: 90%;
-            letter-spacing: 5px;
-            margin-left: 20px;
-            font-size: 3em;
-        }
-        
-        span.animanomebefore::before {
-            letter-spacing: 5px;
-            animation-name: animanomebefore;
-            animation-duration: 1s;
-            position: absolute;
-            content: " </ Desenvolvedor Front-End >";
-            border-right: 2px solid rgba(255, 255, 255, 0.75);
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 1.6rem;
-            font-weight: bolder;
-            left: 20px;
-            top: 55px;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: blinkCursor 800ms steps(40) infinite normal, typing 3s steps(40) 3s normal both;
-        }
-        
-        .projetos {
-            text-align: center;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .projetos h1 {
-            color: #EDEDED;
-        }
-        
-        .meusprojetos {
-            box-shadow: 0px 0px 10px #171717;
-            margin: 10px;
-            background: url('../img/GITHUB-PROFILE2.png') center no-repeat;
-            background-size: cover;
-            overflow: hidden;
-            border-radius: 00px;
-            font-weight: 700;
-            position: relative;
-            width: 350px;
-            height: 400px;
-        }
-        
-        .meusprojetos:nth-child(2) {
-            background: url('../img/codeapp.png') center no-repeat;
-        }
-        
-        .meusprojetos:nth-child(3) {
-            background: url('../img/webword.png') center no-repeat;
-        }
-        
-        .meusprojetos:nth-child(4) {
-            background: url('../img/pariquera.png') center no-repeat;
-        }
-        
-        .conteudo-projetos {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background-color: #DA0037;
-            color: #EDEDED;
-            border-top-left-radius: 20px;
-            transform: translateY(70px);
-            transition: transform 0.25s;
-        }
-        
-        .conteudo-projetos::before {
-            content: "";
-            position: absolute;
-            top: -47px;
-            right: -35px;
-            z-index: -5;
-            width: 100px;
-            height: 100px;
-            transform: rotate(-175deg);
-            border-radius: 50%;
-            box-shadow: inset 48px 48px #DA0037;
-        }
-        
-        .conteudo-projetos h3,
-        .conteudo-projetos span,
-        .conteudo-projetos p {
-            padding: 0 5px;
-        }
-        
-        .conteudo-projetos h3 {
-            font-size: 1.1em;
-            line-height: 5px;
-            letter-spacing: 0px;
-        }
-        
-        .conteudo-projetos span {
-            display: block;
-            font-size: 14px;
-        }
-        
-        .conteudo-projetos p {
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.25s;
-        }
-        
-        .meusprojetos:hover .conteudo-projetos {
-            transform: translateY(0);
-        }
-        
-        .meusprojetos:hover .conteudo-projetos p {
-            opacity: 1;
-            transition-delay: 0.25s;
-        }
-        
-        .roadmap {
-            width: 100%;
-            position: relative;
-            padding: 50px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .historicoCursos,
-        .historicoProfissao {
-            color: #EDEDED;
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            width: 500px;
-            margin: 20px;
-            height: 500px;
-            font-weight: boldER;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .roadmap .historicoCursos h1 {
-            position: relative;
-            text-align: center;
-            top: 10px;
-        }
-        
-        .linha {
-            top: 0;
-            padding: 0;
-            margin: 0;
-            width: var(--espaco);
-            height: 100px;
-            position: relative;
-            background-color: #444444;
-        }
-        
-        .linha::before {
-            top: 10px;
-            text-align: center;
-            right: 4px;
-            background-color: #DA0037;
-            content: " Programador 2016/2017";
-            position: absolute;
-            width: 130px;
-            height: var(--espaco);
-        }
-        
-        .linha::after {
-            text-align: center;
-            top: 130px;
-            left: 4px;
-            background-color: #DA0037;
-            content: "Desenvovimento de Sistemas 2020/2021";
-            position: absolute;
-            width: 170px;
-            height: var(--espaco);
-        }
-        
-        .linha2 {
-            margin: 0;
-            width: var(--espaco);
-            height: 250px;
-            position: relative;
-            background-color: #444444;
-        }
-        
-        .linha2::before {
-            text-align: center;
-            top: 150px;
-            right: 4px;
-            background-color: #DA0037;
-            content: "Engenharia de Software 2022 até 2025";
-            position: absolute;
-            width: 160px;
-            height: var(--espaco);
-        }
-        
-        .linhaprofissoes {
-            top: 0;
-            padding: 0;
-            margin: 0;
-            width: var(--espaco);
-            height: 100px;
-            position: relative;
-            background-color: #444444;
-        }
-        
-        .linhaprofissoes2 {
-            margin: 0;
-            width: var(--espaco);
-            height: 250px;
-            position: relative;
-            background-color: #444444;
-        }
-        
-        .linhaprofissoes::before {
-            text-align: center;
-            top: 10px;
-            right: 4px;
-            background-color: #DA0037;
-            content: "Empacotador 2017/2018";
-            position: absolute;
-            width: 160px;
-            height: var(--espaco);
-        }
-        
-        .linhaprofissoes::after {
-            text-align: center;
-            top: 150px;
-            left: 4px;
-            background-color: #DA0037;
-            content: "Auxiliar de Limpeza 2019 até hoje";
-            position: absolute;
-            width: 160px;
-            height: var(--espaco);
-        }
-        
-        .linhaprofissoes2::after {
-            text-align: center;
-            top: 150px;
-            right: 4px;
-            background-color: #DA0037;
-            content: "Fututo Desenvolvedor Front End";
-            position: absolute;
-            width: 160px;
-            height: var(--espaco);
-        }
-        
-        .nav-list.active {
-            transform: translateX(0);
-        }
-        
-        .contatos {
-            color: #EDEDED;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .contatos form {
-            width: 50%;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .contatos form label {
-            padding-top: 10px;
-            font-weight: bolder;
-            font-size: 1.3rem;
-        }
-        
-        .contatos form input {
-            font-size: 1rem;
-            width: 90%;
-            height: 40px;
-            border: none;
-            outline: none;
-            transition: ease-in-out, width .35s ease-in-out;
-        }
-        
-        .contatos form input::placeholder {
-            position: relative;
-            left: 10px;
-        }
-        
-        footer {
-            letter-spacing: var(--espaco);
-            display: inherit;
-            top: 0px;
-            height: 300px;
-            color: #EDEDED;
-            line-height: 5px;
-            position: relative;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Poppins:wght@100&family=Righteous&family=Roboto+Serif:opsz,wght@8..144,100&display=swap');
+:root {
+    --fontPrimaria: 'Poppins', sans-serif;
+    --font: 'Passion One', cursive;
+    /*ja ta*/
+    --font2: 'Righteous', cursive;
+    /*ja ta*/
+    --resto: 'Roboto Serif', serif;
+    --fontSize: 32px;
+    --fontmedia: 24px;
+    --fontMobile: 18px;
+    --espaco: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #171717;
+    font-family: var(--fontPrimaria);
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    color: #EDEDED;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.meio {
+    margin: 0 auto;
+    position: relative;
+    width: 90%;
+    height: 100%;
+}
+
+#header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+#logo {
+    font-size: var(--fontSize);
+    letter-spacing: var(--espaco);
+    display: inherit;
+    transform: rotate(360deg);
+    transition: transform .6s;
+}
+
+header a {
+    font-weight: bolder;
+    text-decoration: none;
+    color: #fff;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: .9rem;
+}
+
+#menu a {
+    position: relative;
+    letter-spacing: var(--espaco);
+    display: block;
+    padding: .4rem;
+    color: #ffffff;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+#menu a::after {
+    content: "";
+    position: absolute;
+    background-color: #ff3737;
+    width: 0;
+    height: var(--espaco);
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+#menu a:hover:after {
+    width: 100%;
+    transition: 0.6s;
+    background-color: #EDEDED;
+}
+
+.sobre {
+    background-color: #171717;
+    padding-top: 40px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parte1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.parte2 {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation-name: animaSobre;
+    animation-duration: 6s;
+}
+
+.parte2 p {
+    font-size: var(--fontMobile);
+    letter-spacing: var(--espaco);
+    font-weight: 600;
+    width: 90%;
+    text-align: center;
+}
+
+.imgGil {
+    box-shadow: 0px 0px 20px rgb(10, 10, 10);
+    border-radius: 100%;
+    width: 240px;
+    height: 240px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    transition: 1s
+}
+
+.icons {
+    font-size: var(--fontSize);
+    letter-spacing: 10px;
+    color: #EDEDED;
+}
+
+.sobreInf p {
+    position: relative;
+    left: -10px;
+    font-weight: bolder;
+    font-size: var(--fontMobile);
+    line-height: 0px;
+    animation-name: animaSobre;
+    animation-duration: 6s;
+}
+
+h1.nome {
+    animation-name: animanome;
+    animation-duration: 2s;
+    transition: 5s;
+    letter-spacing: 5px;
+    font-size: 3em;
+}
+
+h1.nome::before {
+    letter-spacing: 3px;
+    animation-name: animanomebefore;
+    animation-duration: 1s;
+    position: absolute;
+    content: " </ Desenvolvedor Front-End >";
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.6rem;
+    font-weight: bolder;
+    top: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blinkCursor 800ms steps(40) infinite normal, typing 3s steps(40) 3s normal both;
+}
+
+.projetos {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projetos h1 {
+    color: #EDEDED;
+}
+
+.meusprojetos {
+    box-shadow: 0px 0px 10px #171717;
+    margin: 10px;
+    background: url('../img/GITHUB-PROFILE2.png') center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 00px;
+    font-weight: 700;
+    position: relative;
+    width: 350px;
+    height: 400px;
+}
+
+.meusprojetos:nth-child(2) {
+    background: url('../img/codeapp.png') center no-repeat;
+}
+
+.meusprojetos:nth-child(3) {
+    background: url('../img/webword.png') center no-repeat;
+}
+
+.meusprojetos:nth-child(4) {
+    background: url('../img/pariquera.png') center no-repeat;
+}
+
+.conteudo-projetos {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #DA0037;
+    color: #EDEDED;
+    border-top-left-radius: 20px;
+    transform: translateY(70px);
+    transition: transform 0.25s;
+}
+
+.conteudo-projetos::before {
+    content: "";
+    position: absolute;
+    top: -47px;
+    right: -35px;
+    z-index: -5;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-175deg);
+    border-radius: 50%;
+    box-shadow: inset 48px 48px #DA0037;
+}
+
+.conteudo-projetos h3,
+.conteudo-projetos span,
+.conteudo-projetos p {
+    padding: 0 5px;
+}
+
+.conteudo-projetos h3 {
+    font-size: 1.1em;
+    line-height: 5px;
+    letter-spacing: 0px;
+}
+
+.conteudo-projetos span {
+    display: block;
+    font-size: 14px;
+}
+
+.conteudo-projetos p {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.meusprojetos:hover .conteudo-projetos {
+    transform: translateY(0);
+}
+
+.meusprojetos:hover .conteudo-projetos p {
+    opacity: 1;
+    transition-delay: 0.25s;
+}
+
+.roadmap {
+    width: 100%;
+    position: relative;
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.historicoCursos,
+.historicoProfissao {
+    color: #EDEDED;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: 20px;
+    height: 500px;
+    font-weight: boldER;
+    flex-direction: column;
+    align-items: center;
+}
+
+.roadmap .historicoCursos h1 {
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+
+.linha {
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: var(--espaco);
+    height: 100px;
+    position: relative;
+    background-color: #444444;
+}
+
+.linha::before {
+    top: 10px;
+    text-align: center;
+    right: 4px;
+    background-color: #DA0037;
+    content: " Programador 2016/2017";
+    position: absolute;
+    width: 130px;
+    height: var(--espaco);
+}
+
+.linha::after {
+    text-align: center;
+    top: 130px;
+    left: 4px;
+    background-color: #DA0037;
+    content: "Desenvovimento de Sistemas 2020/2021";
+    position: absolute;
+    width: 170px;
+    height: var(--espaco);
+}
+
+.linha2 {
+    margin: 0;
+    width: var(--espaco);
+    height: 250px;
+    position: relative;
+    background-color: #444444;
+}
+
+.linha2::before {
+    text-align: center;
+    top: 150px;
+    right: 4px;
+    background-color: #DA0037;
+    content: "Engenharia de Software 2022 até 2025";
+    position: absolute;
+    width: 160px;
+    height: var(--espaco);
+}
+
+.linhaprofissoes {
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: var(--espaco);
+    height: 100px;
+    position: relative;
+    background-color: #444444;
+}
+
+.linhaprofissoes2 {
+    margin: 0;
+    width: var(--espaco);
+    height: 250px;
+    position: relative;
+    background-color: #444444;
+}
+
+.linhaprofissoes::before {
+    text-align: center;
+    top: 10px;
+    right: 4px;
+    background-color: #DA0037;
+    content: "Empacotador 2017/2018";
+    position: absolute;
+    width: 160px;
+    height: var(--espaco);
+}
+
+.linhaprofissoes::after {
+    text-align: center;
+    top: 150px;
+    left: 4px;
+    background-color: #DA0037;
+    content: "Auxiliar de Limpeza 2019 até hoje";
+    position: absolute;
+    width: 160px;
+    height: var(--espaco);
+}
+
+.linhaprofissoes2::after {
+    text-align: center;
+    top: 150px;
+    right: 4px;
+    background-color: #DA0037;
+    content: "Fututo Desenvolvedor Front End";
+    position: absolute;
+    width: 160px;
+    height: var(--espaco);
+}
+
+.contatos {
+    color: #EDEDED;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.contatos form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contatos form label {
+    padding-top: 10px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.contatos form input {
+    font-size: 1rem;
+    height: 50px;
+    border: none;
+    outline: none;
+    transition: ease-in-out, width .35s ease-in-out;
+}
+
+.contatos form input::placeholder {
+    position: relative;
+    padding: 10px;
+}
+
+footer {
+    letter-spacing: var(--espaco);
+    display: inherit;
+    top: 0px;
+    height: 300px;
+    color: #EDEDED;
+    line-height: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

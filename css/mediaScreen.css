@@ -1,111 +1,132 @@
- @media (max-width:999px) {
-     body {
-         overflow-x: hidden;
-     }
-     h1.nome {
-         font-size: 1.4rem;
-     }
-     span.animanomebefore::before {
-         font-size: 1.2rem;
-     }
-     .logo {
-         position: relative;
-         text-align: center;
-         right: -25px;
-         width: 80%;
-     }
-     .nav-list {
-         position: absolute;
-         top: 45px;
-         width: 100vw;
-         height: 80vh;
-         flex-direction: column;
-         align-items: center;
-         justify-content: space-around;
-         z-index: 50;
-         background-color: #444444;
-         right: 0;
-         transform: translate(100%);
-         transition: transform 0.3s ease-in;
-         /*  ease-in uma chegada suave*/
-     }
-     .nav-list li a:hover:after {}
-     .nav-list li {
-         margin-left: 0px;
-         opacity: 1;
-     }
-     .mobile-menu {
-         display: block;
-     }
-     .parte1 {
-         width: 450px;
-     }
-     .imgGil {
-         width: 200px;
-         height: 200px;
-     }
- }
- 
- @media (max-width:800px) {
-     body {
-         overflow-x: hidden;
-     }
-     .parte1 {
-         width: 100%;
-     }
-     .logo {
-         right: -25px;
-         float: right;
-         width: 80%;
-     }
-     h1.nome {
-         font-size: 34px;
-         left: 30px;
-     }
-     span.animanomebefore::before {
-         top: -15px;
-         left: 20px;
-         letter-spacing: 2px;
-         font-size: 1.5rem;
-     }
-     .nav-list li {
-         margin-left: 0px;
-         opacity: 1;
-     }
-     .mobile-menu {
-         display: block;
-     }
-     .roadmap h1 {
-         font-size: var(--fontmedia);
-     }
-     .meusprojetos {
-         width: 500px;
-     }
-     .contatos {
-         flex-direction: column;
-         align-items: center;
-     }
-     .contatos form input {
-         width: 100%;
-     }
- }
- 
- @media (max-width:550px) {
-     body {
-         overflow-x: hidden;
-     }
-     .parte2 {
-         height: 500px;
-     }
-     h1.nome {
-         top: 20px;
-         font-size: 2rem;
-         left: 20px;
-     }
-     .contatos {
-         flex-direction: column;
-     }
-     form input {
-         width: 100%;
-     }
- }
+@media (max-width:1199px) {
+    body {
+        overflow-x: hidden;
+    }
+    nav {
+        display: inherit;
+    }
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    .hamburguer {
+        display: block;
+        width: 40px;
+        border-top: 6px solid;
+        color: #DA0037;
+    }
+    .hamburguer::before,
+    .hamburguer::after {
+        display: block;
+        content: "";
+        height: 6px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+        color: #DA0037;
+    }
+    #nav.active .hamburguer {
+        color: transparent;
+    }
+    #nav.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+    #nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: -11px;
+    }
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 55px;
+        right: 0px;
+        z-index: 1;
+        transition: .8s;
+        height: 0;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #nav.active #menu {
+        background-color: #444444;
+        height: calc(100vh - 55px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a {
+        text-align: center;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid black;
+    }
+    h1.nome::before {
+        font-size: 1rem;
+        top: -10px;
+    }
+    .parte1 {
+        width: 100%;
+        align-items: center;
+    }
+    h1.nome {
+        font-size: 1.8rem;
+    }
+    footer {
+        height: 170px;
+    }
+}
+
+@media (max-width:800px) {
+    .conteudo-projetos {
+        padding: 10px 0;
+    }
+    .conteudo-projetos::before {
+        right: -45px;
+    }
+    .parte2 p,
+    .sobreInf p {
+        font-size: 18px;
+    }
+    h1.nome {
+        font-size: 1.8rem;
+    }
+    h1.nome::before {
+        top: -10px;
+    }
+    .roadmap h1 {
+        font-size: var(--fontmedia);
+    }
+    .parte2 {
+        margin-top: 50px;
+        height: 500px;
+    }
+}
+
+@media (max-width:450px) {
+    .parte2 {
+        height: 350px;
+    }
+    h1.nome {
+        top: 20px;
+        font-size: 22px;
+    }
+    h1.nome::before {
+        font-size: 1rem;
+    }
+    .parte2 p,
+    .sobreInf p {
+        font-size: 14px;
+    }
+    .icons {
+        font-size: var(--fontmedia);
+    }
+    .imgGil {
+        width: 200px;
+        height: 200px;
+    }
+}

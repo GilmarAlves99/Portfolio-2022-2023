@@ -1,33 +1,22 @@
-//toda classe tem um metodo constructor()
-class MobileNavbar {
-    constructor(mobileMenu, navList, navLinks) {
-        //referencia das propriedades classes
-        this.mobileMenu = document.querySelector(mobileMenu);
-        this.navList = document.querySelector(navList);
-        this.navLinks = document.querySelectorAll(navLinks);
-        this.activeClass = "active";
+const btnMobile = document.getElementById('btn-mobile');
 
-        this.handleClick = this.handleClick.bind(this); // pegar todos os metodos e propriedas
+function toggleMenu(event) {
+    if (event.type === 'touchstart') event.preventDefault();
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('active');
+    const active = nav.classList.contains('active');
+    event.currentTarget.setAttribute('aria-expanded', active);
+    if (active) {
+        event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+
+    } else {
+        event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+
     }
-    handleClick() {
-        console.log(this)
-        this.navList.classList.toggle(this.activeClass);
-    }
-    addClickEvent() {
-        this.mobileMenu.addEventListener("click", this.handleClick);
-    }
-    init() {
-        if (this.mobileMenu) {
-            this.addClickEvent();
-        }
-        return this;
-    }
+
 }
 
-const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li",
-);
 
-mobileNavbar.init();
+btnMobile.addEventListener('click', toggleMenu);
+
+btnMobile.addEventListener('touchstart', toggleMenu);

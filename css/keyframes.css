@@ -5,7 +5,9 @@
         width: 0;
     }
     to {
-        width: 90%;
+        width: 80%;
+        min-width: 200px;
+        max-width: 440px;
         border-right: 5px solid rgba(255, 255, 255, 0);
     }
 }
