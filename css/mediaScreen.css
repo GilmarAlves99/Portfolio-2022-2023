@@ -65,16 +65,36 @@
         margin: 0 1rem;
         border-bottom: 2px solid black;
     }
+    .sobre {
+        flex-direction: column;
+    }
     h1.nome::before {
         font-size: 1rem;
-        top: -10px;
-    }
-    .parte1 {
-        width: 100%;
-        align-items: center;
+        top: -20px;
     }
     h1.nome {
-        font-size: 1.8rem;
+        display: inherit;
+        top: 00px;
+        margin: 0 auto;
+        font-weight: bolder;
+        font-size: 2.2rem;
+    }
+    .parte1,
+    .parte2 {
+        width: 100%;
+    }
+    .separador,
+    .sobreInf {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .separador {
+        margin-top: 50px;
+    }
+    .sobreInf {
+        margin: 0 auto;
+        height: 240px;
     }
     footer {
         height: 170px;
@@ -82,51 +102,37 @@
 }
 
 @media (max-width:800px) {
+    #header {
+        padding: 2rem;
+    }
     .conteudo-projetos {
         padding: 10px 0;
     }
     .conteudo-projetos::before {
         right: -45px;
     }
-    .parte2 p,
     .sobreInf p {
-        font-size: 18px;
+        font-size: var(--fontmedia);
     }
     h1.nome {
-        font-size: 1.8rem;
-    }
-    h1.nome::before {
-        top: -10px;
+        font-size: 2rem;
     }
     .roadmap h1 {
         font-size: var(--fontmedia);
     }
-    .parte2 {
-        margin-top: 50px;
-        height: 500px;
-    }
 }
 
-@media (max-width:450px) {
-    .parte2 {
-        height: 350px;
-    }
+@media (max-width:500px) {
     h1.nome {
-        top: 20px;
         font-size: 22px;
     }
     h1.nome::before {
-        font-size: 1rem;
+        top: -20px;
+        font-size: 0.7rem;
     }
     .parte2 p,
-    .sobreInf p {
-        font-size: 14px;
-    }
+    .sobreInf p,
     .icons {
-        font-size: var(--fontmedia);
-    }
-    .imgGil {
-        width: 200px;
-        height: 200px;
+        font-size: var(--fontMobile);
     }
 }

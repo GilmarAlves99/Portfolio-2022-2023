@@ -7,7 +7,7 @@
     /*ja ta*/
     --resto: 'Roboto Serif', serif;
     --fontSize: 32px;
-    --fontmedia: 24px;
+    --fontmedia: 22px;
     --fontMobile: 18px;
     --espaco: 2px;
 }
@@ -42,12 +42,13 @@ body {
     height: 70px;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 0 3rem;
     box-sizing: border-box;
     justify-content: space-between;
 }
 
 #logo {
+    font-family: var(--font);
     font-size: var(--fontSize);
     letter-spacing: var(--espaco);
     display: inherit;
@@ -97,29 +98,30 @@ header a {
 }
 
 .sobre {
-    background-color: #171717;
-    padding-top: 40px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
 }
 
+.parte1 .sobreInf,
+.parte2 {
+    animation-name: animaSobre;
+    animation-duration: 6.5s;
+}
+
 .parte1 {
-    position: relative;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     width: 60%;
 }
 
 .parte2 {
-    display: flex;
     flex: 1;
-    justify-content: center;
-    align-items: center;
+    display: flex;
     flex-direction: column;
-    animation-name: animaSobre;
-    animation-duration: 6s;
+    align-items: center;
+    text-align: center;
+    margin: 0;
 }
 
 .parte2 p {
@@ -131,39 +133,61 @@ header a {
 }
 
 .imgGil {
-    box-shadow: 0px 0px 20px rgb(10, 10, 10);
-    border-radius: 100%;
-    width: 240px;
-    height: 240px;
+    width: 320px;
+    height: 320px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: darken;
-    transition: 1s
+}
+
+.skills {
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.skills img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
 }
 
 .icons {
-    font-size: var(--fontSize);
+    font-size: 1.7rem;
     letter-spacing: 10px;
     color: #EDEDED;
 }
 
+.separador,
+.sobreInf {
+    height: 50%;
+}
+
+.sobreInf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .sobreInf p {
+    margin: 0;
     position: relative;
-    left: -10px;
     font-weight: bolder;
-    font-size: var(--fontMobile);
-    line-height: 0px;
-    animation-name: animaSobre;
-    animation-duration: 6s;
+    font-size: var(--fontmedia);
+    line-height: 2.8rem;
 }
 
 h1.nome {
+    position: relative;
     animation-name: animanome;
     animation-duration: 2s;
     transition: 5s;
     letter-spacing: 5px;
     font-size: 3em;
+    top: 70px;
 }
 
 h1.nome::before {
@@ -176,7 +200,7 @@ h1.nome::before {
     color: rgba(255, 255, 255, 0.75);
     font-size: 1.6rem;
     font-weight: bolder;
-    top: 40px;
+    top: -40px;
     white-space: nowrap;
     overflow: hidden;
     animation: blinkCursor 800ms steps(40) infinite normal, typing 3s steps(40) 3s normal both;
@@ -440,6 +464,13 @@ h1.nome::before {
 .contatos form input::placeholder {
     position: relative;
     padding: 10px;
+}
+
+.pstatus {
+    text-align: center;
+    color: forestgreen;
+    font-size: 2rem;
+    font-weight: bolder;
 }
 
 footer {
