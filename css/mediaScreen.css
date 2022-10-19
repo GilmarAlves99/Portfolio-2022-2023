@@ -1,10 +1,27 @@
+
+
+:root {
+
+    --font: 'Passion One', cursive;
+
+    --resto: 'Roboto Serif', serif;
+    --fontSize: 32px;
+    --fontMedia: 22px;
+    --fontMobile: 18px;
+    --espaco: 2px;
+}
+
+
 @media (max-width:1199px) {
+
     body {
         overflow-x: hidden;
     }
+
     nav {
         display: inherit;
     }
+
     #btn-mobile {
         display: flex;
         padding: .5rem 1rem;
@@ -14,12 +31,14 @@
         cursor: pointer;
         gap: .5rem;
     }
+
     .hamburguer {
         display: block;
         width: 40px;
         border-top: 6px solid;
         color: #DA0037;
     }
+
     .hamburguer::before,
     .hamburguer::after {
         display: block;
@@ -31,16 +50,20 @@
         position: relative;
         color: #DA0037;
     }
+
     #nav.active .hamburguer {
         color: transparent;
     }
+
     #nav.active .hamburguer::before {
         transform: rotate(135deg);
     }
+
     #nav.active .hamburguer::after {
         transform: rotate(-135deg);
         top: -11px;
     }
+
     #menu {
         display: block;
         position: absolute;
@@ -53,86 +76,96 @@
         visibility: hidden;
         overflow-y: hidden;
     }
+
     #nav.active #menu {
         background-color: #444444;
         height: calc(100vh - 55px);
         visibility: visible;
         overflow-y: auto;
     }
+
     #menu a {
         text-align: center;
         padding: 1rem 0;
         margin: 0 1rem;
         border-bottom: 2px solid black;
     }
-    .sobre {
-        flex-direction: column;
-    }
-    h1.nome::before {
-        font-size: 1rem;
-        top: -20px;
-    }
-    h1.nome {
-        display: inherit;
-        top: 00px;
-        margin: 0 auto;
-        font-weight: bolder;
-        font-size: 2.2rem;
-    }
-    .parte1,
-    .parte2 {
-        width: 100%;
-    }
-    .separador,
-    .sobreInf {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .separador {
-        margin-top: 50px;
-    }
-    .sobreInf {
-        margin: 0 auto;
-        height: 240px;
-    }
-    footer {
-        height: 170px;
-    }
-}
 
-@media (max-width:800px) {
     #header {
         padding: 2rem;
     }
+
+    h3.nomeDev {
+        top: 30px;
+        width: 255px;
+    }
+
+
+    .parte2 p {
+       text-align: center;
+    }
+
+
+
+    .parte1, .parte2 {
+        align-items: center;
+        width: 100%;
+
+
+    }
+
+    .apresentacao {
+        position: relative;
+        height: 100%;
+
+    }
+
+
+    .sobre {
+
+        flex-direction: column;
+    }
+
+   
+}
+
+@media (max-width:800px) {
+    .icons {
+        font-size: 25px
+    }
+
+
+    h1.nome {
+        font-size: var(--fontMedia);
+    }
+
+    h3.nomeDev {
+        margin: 10px 0;
+    }
+
+    .sobreInf p {
+        font-size: var(--fontMedia);
+    }
+
     .conteudo-projetos {
         padding: 10px 0;
     }
+
     .conteudo-projetos::before {
         right: -45px;
     }
-    .sobreInf p {
-        font-size: var(--fontmedia);
-    }
-    h1.nome {
-        font-size: 2rem;
-    }
-    .roadmap h1 {
-        font-size: var(--fontmedia);
-    }
+
+   
 }
 
 @media (max-width:500px) {
-    h1.nome {
-        font-size: 22px;
-    }
-    h1.nome::before {
-        top: -20px;
-        font-size: 0.7rem;
-    }
-    .parte2 p,
-    .sobreInf p,
-    .icons {
+
+    .sobreInf p {
         font-size: var(--fontMobile);
     }
+
+
+   
+
+
 }

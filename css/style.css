@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Poppins:wght@100&family=Righteous&family=Roboto+Serif:opsz,wght@8..144,100&display=swap');
+
+
 :root {
     --fontPrimaria: 'Poppins', sans-serif;
-    --font: 'Passion One', cursive;
-    /*ja ta*/
-    --font2: 'Righteous', cursive;
-    /*ja ta*/
+    --font2: 'Passion One', cursive;
+
     --resto: 'Roboto Serif', serif;
     --fontSize: 32px;
-    --fontmedia: 22px;
+    --fontMedia: 22px;
     --fontMobile: 18px;
     --espaco: 2px;
 }
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 50px #EDEDED;
+    border-radius: 100px;
+}
+
 
 html {
     scroll-behavior: smooth;
@@ -27,26 +43,45 @@ body {
 
 .content {
     color: #EDEDED;
-    min-height: 100vh;
+    height: auto;
     width: 100%;
+
 }
 
 .meio {
     margin: 0 auto;
     position: relative;
     width: 90%;
-    height: 100%;
+    height: auto;
+
+
+
+}
+
+.titulo {
+
+    text-align: center;
+    color: #EDEDED;
+
 }
 
 #header {
+    width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
     padding: 0 3rem;
     box-sizing: border-box;
     justify-content: space-between;
-}
 
+
+}
+.redesSociais a,header a{
+    text-decoration: none;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #EDEDED;
+}
 #logo {
     font-family: var(--font);
     font-size: var(--fontSize);
@@ -56,11 +91,6 @@ body {
     transition: transform .6s;
 }
 
-header a {
-    font-weight: bolder;
-    text-decoration: none;
-    color: #fff;
-}
 
 #menu {
     display: flex;
@@ -97,131 +127,164 @@ header a {
     background-color: #EDEDED;
 }
 
+
+
 .sobre {
-    position: relative;
+    color: #fff;
+
     display: flex;
-    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-around;
+
 }
 
 .parte1 .sobreInf,
 .parte2 {
-    animation-name: animaSobre;
+
+    animation-name: anima;
     animation-duration: 6.5s;
 }
 
 .parte1 {
     display: flex;
+
+
+    justify-content: center;
     flex-direction: column;
-    width: 60%;
+
 }
 
 .parte2 {
-    flex: 1;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0;
+    justify-content: center;
+    width: 50%
 }
 
 .parte2 p {
     font-size: var(--fontMobile);
     letter-spacing: var(--espaco);
     font-weight: 600;
-    width: 90%;
-    text-align: center;
-}
 
-.imgGil {
-    width: 320px;
-    height: 320px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: darken;
+
 }
 
 .skills {
     margin: 0;
     position: relative;
     display: flex;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .skills img {
-    margin-right: 10px;
+    margin: 5px;
     width: 40px;
     height: 40px;
+
+}
+
+.parte1 p {
+
+    font-size: var(--fontMedia);
 }
 
 .icons {
-    font-size: 1.7rem;
+    font-size: var(--fontSize);
     letter-spacing: 10px;
     color: #EDEDED;
+
 }
 
-.separador,
-.sobreInf {
-    height: 50%;
-}
 
-.sobreInf {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
-.sobreInf p {
+.parte1 p {
     margin: 0;
+
     position: relative;
     font-weight: bolder;
-    font-size: var(--fontmedia);
-    line-height: 2.8rem;
+    line-height: 2rem;
 }
 
 h1.nome {
     position: relative;
-    animation-name: animanome;
-    animation-duration: 2s;
-    transition: 5s;
-    letter-spacing: 5px;
-    font-size: 3em;
-    top: 70px;
+    letter-spacing: 6px;
+    font-size: var(--fontSize);
+    top: 0px;
+    text-shadow: #171717 0 2px;
 }
 
-h1.nome::before {
-    letter-spacing: 3px;
-    animation-name: animanomebefore;
-    animation-duration: 1s;
-    position: absolute;
-    content: " </ Desenvolvedor Front-End >";
+h3.nomeDev {
+
+
+    position: relative;
+    text-align: center;
     border-right: 2px solid rgba(255, 255, 255, 0.75);
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 1.6rem;
+    width: 100%;
+
+    font-size: var(--fontMobile);
     font-weight: bolder;
-    top: -40px;
+    top: 50px;
     white-space: nowrap;
     overflow: hidden;
-    animation: blinkCursor 800ms steps(40) infinite normal, typing 3s steps(40) 3s normal both;
+    animation: typing 5s steps(99), blink .2s step-end infinite alternate;
 }
 
-.projetos {
-    text-align: center;
-    width: 100%;
-    height: 100%;
+.carrouselProjetos, .meuCertificados main {
+
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 1.2em;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+}
+
+.figureCertificados {
+    margin: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    box-shadow: 0 0 10px #444444;
+    flex-direction: column;
+
+
 }
 
-.projetos h1 {
+.certificado {
+    width: 350px;
+    height: 200px;
+
+}
+
+.nomeCurso {
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
     color: #EDEDED;
+    font-family: var(--resto);
+    letter-spacing: var(--espaco);
+
+
+
+}
+
+.nomeCurso a {
+    color: #EDEDED;
+    cursor: pointer;
 }
 
 .meusprojetos {
-    box-shadow: 0px 0px 10px #171717;
+    box-shadow: 0 0 10px #444444;
     margin: 10px;
+
     background: url('../img/GITHUB-PROFILE2.png') center no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -230,6 +293,7 @@ h1.nome::before {
     position: relative;
     width: 350px;
     height: 400px;
+
 }
 
 .meusprojetos:nth-child(2) {
@@ -246,6 +310,7 @@ h1.nome::before {
 
 .conteudo-projetos {
     position: absolute;
+
     bottom: 0;
     left: 0;
     width: 100%;
@@ -255,6 +320,7 @@ h1.nome::before {
     border-top-left-radius: 20px;
     transform: translateY(70px);
     transition: transform 0.25s;
+
 }
 
 .conteudo-projetos::before {
@@ -305,7 +371,7 @@ h1.nome::before {
 .roadmap {
     width: 100%;
     position: relative;
-    padding: 50px 0;
+    margin: 50px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -318,9 +384,9 @@ h1.nome::before {
     display: flex;
     flex-wrap: wrap;
     width: 500px;
-    margin: 20px;
+    margin: 0px;
     height: 500px;
-    font-weight: boldER;
+    font-weight: bolder;
     flex-direction: column;
     align-items: center;
 }
@@ -357,7 +423,7 @@ h1.nome::before {
     top: 130px;
     left: 4px;
     background-color: #DA0037;
-    content: "Desenvovimento de Sistemas 2020/2021";
+    content: "Desenvolvimento de Sistemas 2020/2021";
     position: absolute;
     width: 170px;
     height: var(--espaco);
@@ -376,7 +442,19 @@ h1.nome::before {
     top: 150px;
     right: 4px;
     background-color: #DA0037;
-    content: "Engenharia de Software 2022 até 2025";
+    content: "Desenvolvimento FullStack (2022/2022)";
+    position: absolute;
+    width: 160px;
+    height: var(--espaco);
+}
+
+
+.linha2::after {
+    text-align: center;
+    bottom: 0px;
+    left: 4px;
+    background-color: #DA0037;
+    content: "Engenharia de Software  (2022 até 2025)";
     position: absolute;
     width: 160px;
     height: var(--espaco);
@@ -427,10 +505,12 @@ h1.nome::before {
     top: 150px;
     right: 4px;
     background-color: #DA0037;
-    content: "Fututo Desenvolvedor Front End";
+    content: "Futuro Desenvolvedor / Analista";
     position: absolute;
     width: 160px;
     height: var(--espaco);
+    display: f;
+    flex-wrap: wrap;
 }
 
 .contatos {
@@ -439,16 +519,17 @@ h1.nome::before {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 40px;
+
 }
 
 .contatos form {
     display: flex;
     flex-direction: column;
+
 }
 
 .contatos form label {
-    padding-top: 10px;
+    padding: 10px 0;
     font-weight: bolder;
     font-size: 1.3rem;
 }
@@ -459,11 +540,22 @@ h1.nome::before {
     border: none;
     outline: none;
     transition: ease-in-out, width .35s ease-in-out;
+    padding: 0 20px;
 }
 
 .contatos form input::placeholder {
     position: relative;
     padding: 10px;
+}
+
+.contatos form .button {
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+    color: #EDEDED;
+    background-color: green;
 }
 
 .pstatus {
@@ -475,12 +567,28 @@ h1.nome::before {
 
 footer {
     letter-spacing: var(--espaco);
-    display: inherit;
+
     top: 0px;
-    height: 300px;
+    height: auto;
     color: #EDEDED;
     line-height: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
     text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.carousel {
+  
+    width: 250px;
+
+}
+
+footer .euImg { margin: 0 auto;
+    width: auto;
+    height: 300px;
 }

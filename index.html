@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gilmar Zezilia Alves - Portfolio</title>
-    <meta name="keywords" content="Portfolio, Gilmar Zezilia Alves,Front End, Html, Css, JavaScript, Web Design, Developer Front End">
-    <meta name="description" content="Portfolio para mostrar minhas habilidades, projetos e experiências na area de front-End e Back-End">
-    <meta name="author" content="Gilmar Zezilia Alves portfolio - front end web developer ">
+    <meta name="keywords"
+        content="Portfolio, Gilmar Zezilia Alves,Front End, Html, Css, JavaScript, Web Design, Developer Front End">
+    <meta name="description"
+        content="Portfolio para mostrar minhas habilidades, projetos e experiências na area de front-End e Back-End">
+    <meta name="author" content="Gilmar Zezilia Alves Portfolio - front end web developer ">
     <meta name="robots" content="index">
 
     <!-- Social Meta Tags
@@ -27,78 +29,156 @@
     <meta property="twitter:description" content="< Conheça mais sobre mim />">
     <meta property="twitter:image" content="img/capturaDeTelaMobile.png">
 
+
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="css/keyframes.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="css/mediaScreen.css" media="screen">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon_io/android-chrome-192x192.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon_io/dev.png " />
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css" type="text/css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css" type="text/css"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#insert").click(function () {
+                var email = $("#email").val();
+                var nome = $("#nome").val();
+                var mensagem = $("#mensagem").val();
+
+                var dataString = "email=" + email + "&nome=" + nome + "&mensagem=" + mensagem + "&insert=";
+
+                if ($.trim(nome).length > 0 & $.trim(email).length > 0 & $.trim(mensagem).length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "envia.php",
+                        data: dataString,
+                        crossDomain: true,
+                        cache: false,
+                        beforeSend: function () {
+                            $("#status").text('Enviado mensagem...');
+
+                        },
+                        success: function (data) {
+
+                            if (data == "success") {
+                                $("#status").css({ "color": "green" });
+                                $("#status").text('Mensagem enviada :)');
+                            } else if (data == "error") {
+                                $("#status").css({ "color": "red" });
+                                $("#status").text('Preencha todos os campos');
+
+                            } else if (data == "error4") {
+                                $("#status").css({ "color": "red" });
+                                $("#status").text('Mensagem não enviada :(');
+                            }
+                        }
+                    });
+                } else {
+                    $("#status").css({ "color": "red" });
+                    $("#status").text('Preencha todos os campos');
+                    return false;
+                }
+            });
+        });
+
+
+
+    </script>
 </head>
 
 <body>
+
     <header class="content">
         <div id="header">
 
-            <a id="logo" href="/">
-                < />
-            </a>
+            <p id="logo">
+                < GZA />
+            </p>
 
             <nav id="nav">
-                <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><span class="hamburguer"></span></button>
+                <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu"
+                    aria-expanded="false"><span class="hamburguer"></span></button>
                 <ul id="menu" role="menu">
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#contato">Contato</a></li>
+                    <li><a href="#certificado">Certificados</a></li>
                     <li><a href="#redes">Redes Sociais</a></li>
                 </ul>
             </nav>
-        </div>
+
+    </header>
+    </div>
+    <main class="apresentacao">
 
         <div class="sobre meio" id="sobre">
 
             <div class="parte1">
-                <div class="separador">
-                    <h1 class="nome">Gilmar Zezilia Alves</h1>
-                </div>
+                <h3 class="nomeDev ">
+                    < Desenvolvedor Front-End />
+                </h3>
+                <h1 class="nome">
+                    Gilmar Zezilia Alves
+                </h1>
                 <div class="sobreInf">
 
-                    <p> <i class="uil uil-location-pin-alt icons"></i>Pariquera-Açu, São Paulo - Brasil</p>
-                    <p><i class="uil uil-book-open icons"></i>Cursando Engenharia de Software</p>
-                    <p><i class="uil uil-calendar-alt icons"></i>10 / 1999</p>
+                    <p> <i class="uil uil-location-pin-alt icons"></i> Pariquera-Açu, São Paulo - Brasil</p>
+                    <p><i class="uil uil-book-open icons"></i> Cursando Engenharia de Software</p>
+                    <p><i class="uil uil-calendar-alt icons"></i> 10 / 1999</p>
+
                     <figure class="skills">
+                        <img src="img/html5.svg ">
+                        <img src="img/javascript.svg">
+                        <img src="img/css.svg">
+                        <img src="img/sass-avatar.svg">
+                        <img src="img/php.svg">
                         <img src="img/mysql_icon.svg">
+                        <img src="img/icons8-typescript.svg" />
+                        <img src="img/icons8-node-js.svg" />
                         <img src="img/icons8-react-native-96.png">
                         <img src="img/git.svg">
-                        <img src="img/html5.svg">
-                        <img src="img/javascript.svg">
-
                         <img src="img/4745725_code_development_github_open-source_programming_icon.svg">
-                        <img src="img/css.svg">
-                        <img src="img/php.svg">
-
-
-
-
                     </figure>
                 </div>
             </div>
 
             <div class="parte2">
-                <img src="img/undraw_journey_re_ec5q.svg" class="imgGil" alt="" srcset="">
+
                 <p>
-                    Amo programação e estou focado em ser Dev Front End, atualmente tenho conhecimentos das seguintes tecnologias: HTML, CSS, JAVASCRIPT, PHP, MYSQL, FIGMA, e estudando REACT.JS .
+                    Buscando cada vez mais estar atualizado, estou em busca de novas aventuras.
+                    </br>
+                    Atualmente tenho conhecimentos das seguintes tecnologias:
+                    HTML, CSS, SCSS , JAVASCRIPT, TYPESCRIPIT, NODE, PHP, MYSQL, FIGMA, GITHUB, GIT e estudando
+                    REACT.JS.
+                    </br>
+                    Estou disponível para novos projetos e contratações no momento.
+                    Entre em contato comigo para que possamos marcar uma conversa <a href="#redes">📞✉️</a>
                 </p>
+
+
             </div>
 
         </div>
 
-    </header>
+    </main>
+
 
     <div class=" meio">
 
         <main class="projetos" id="projetos" data-anime="left">
 
-            <h1>PORTIFÓLIO</h1>
-            <div class="projetos">
+            <h1 class="titulo">PORTIFÓLIO</h1>
+            <div class="carrouselProjetos">
                 <article class="meusprojetos">
                     <div class="conteudo-projetos">
                         <h3>Pesquisador de usuários do GitHub</h3>
@@ -110,16 +190,18 @@
                 <article class="meusprojetos">
                     <div class="conteudo-projetos">
                         <h3>CodeApp</h3>
-                        <span>CodeApp é uma rede social para troca De experiência emocional (Com +1 participação ).</span>
+                        <span>CodeApp é uma rede social para troca De experiência emocional (Com +1 participação
+                            ).</span>
                         <p>O que foi ultilizado : Html, Css, Php, Mysqli, PhpMailer !</p>
                     </div>
                 </article>
 
                 <article class="meusprojetos">
                     <div class="conteudo-projetos">
-                        <h3>Praticando</h3>
+                        <h3>Web World</h3>
                         <span>Site criado para práticar responsividade .</span>
-                        <p>O que foi ultilizado : Html, Css, slick biblioteca JavaScript (Feito a partir de um tutorial no youtube).</p>
+                        <p>O que foi ultilizado : Html, Css, slick biblioteca JavaScript (Feito a partir de um tutorial
+                            no youtube).</p>
 
                     </div>
                 </article>
@@ -127,12 +209,82 @@
                     <div class="conteudo-projetos">
                         <h3>PARIQUERA-AÇU</h3>
                         <span>Projeto criado para praticar a responsividade do site.</span>
-                        <p>O que foi ultilizado : Html, Css !</p>
+                        <p>O que foi ultilizado : Html, Css e JavaScript!</p>
                     </div>
                 </article>
             </div>
         </main>
+        <main data-anime="left" id="certificado">
 
+            <h1 class="titulo">Certificados</h1>
+            <section class="meuCertificados">
+                <main>
+                    <figure class="figureCertificados">
+                        <img src="img/certificados/uniCesumar.jpg" class="certificado"
+                            alt="Bacharelado em Engenharia de Software - UniCesumar EAD" title="Curso em andamento">
+                        <figcaption class="nomeCurso">
+                            <p>Engenharia de Software</p>
+                            <a href="">
+                                Certificado em andamento
+                            </a>
+                        </figcaption>
+                    </figure>
+                    <figure class="figureCertificados">
+
+                        <img src="img/certificados/tecDesenvolvimentoCertificado.png" class="certificado"
+                            alt=" Técnico em Desenvolvimento de Sitemas - ETEC CENTRO PAULA SOUZA / REGISTRO"
+                            title="Dowload do certificado">
+                        <figcaption class="nomeCurso">
+                            <p>Téc. em Desenvolvimento de Sistemas </p>
+                            <a href="img/certificados/tecDesenvolvimentoCertificado.pdf" download>
+                                Download do Certificado
+                            </a>
+
+                        </figcaption>
+
+                    </figure>
+                    <figure class="figureCertificados">
+
+                        <img src="img/certificados/preparaCursos.png" class="certificado"
+                            alt="Curso Programador - Prepara Cursos / REGISTRO" title="Dowload do certificado">
+
+                        <figcaption class="nomeCurso">
+                            <p>Programador <br /></p>
+                            <a href="img/certificados/preparaCursos.pdf" download>
+                                Download do Certificado
+                            </a>
+
+                        </figcaption>
+                    </figure>
+                    <figure class="figureCertificados">
+
+                        <img src="img/certificados/TechAcademy_DesenvolvimentoWebFull.png" class="certificado"
+                            alt="Desenvolvimento Web Full Stack - TechAcademy EAD" title="Dowload do certificado">
+
+                        <figcaption class="nomeCurso">
+                            <p> Desenvolvimento Web Full Stack </p>
+                            <a href="img/certificados/TechAcademy_DesenvolvimentoWebFull.pdf" download>
+                                Download do Certificado
+                            </a>
+
+                        </figcaption>
+                    </figure>
+                    <figure class="figureCertificados">
+
+                        <img src=" img/certificados/informaticaCras.png" class="certificado"
+                            alt="Informatica Básica e Avançada - CRASS / PARIQUEIRA-AÇU" title="Dowload do certificado">
+
+                        <figcaption class="nomeCurso">
+                            <p> Informatica Básica e Avançada </p>
+                            <a href="img/certificados/informaticaCras.pdf" download>
+                                Download do Certificado
+                            </a>
+
+                        </figcaption>
+                    </figure>
+                </main>
+            </section>
+        </main>
 
         <div class="roadmap" data-anime="left">
 
@@ -140,7 +292,7 @@
                 <h1>CURSOS</h1>
                 <p class="linha"></p>
                 <p class="linha2"></p>
-
+                <p class="linha3"></p>
             </div>
             <div class="historicoProfissao">
                 <h1>PROFISSÕES</h1>
@@ -149,37 +301,52 @@
             </div>
         </div>
 
-        <div class="contatos" id="contato" data-anime="left">
-            <!-- 
-            <Estou disponível para novos projetos e contratações no momento. Entre em contato comigo para que possamos marcar uma conversa 👋
--->
-            <form action="">
+        <div id="contato" class="contatos" data-anime="left">
+            <h1 class="titulo">Contato</h1>
+            <form action="" method="POST">
                 <label for="nome">Nome</label>
                 <input type="text" placeholder="Ex: Carlos">
                 <label for="nome">Email</label>
                 <input type="text" placeholder="seuemail@gmail.com">
                 <label for="nome">Mensagem</label>
                 <input type="text" placeholder="Olá Gilmar, estou entrando em contato por...">
+                <input class="button" type="button" id="insert" value="Enviar" />
             </form>
             <p class="pstatus" id="status"></p>
-            <footer>
-                <div class="redesSociais" id="redes">
-                    <h4>GilmarAlves@gmail.com</h4>
-                    <h4>Gilmar Zezilia Alves </h4>
 
-                    <h4>(13)99795-4520</h4>
-
-                    <a href="https://github.com/GilmarAlves99" target="_blank"><i class="uil uil-github icons"></i></a>
-                    <a href="https://www.linkedin.com/in/gilmar-zezilia-alves-336610182/" target="_blank"><i class="uil uil-linkedin icons"></i></a>
-                </div>
-            </footer>
 
         </div>
+        <footer>
+            <div class="carousel">
+                <div><img src="img/eu/eu.jpg" class="euImg" alt=""></div>
 
+
+                <div><img src="img/cantinho.jpg" class="euImg" alt=""></div>
+
+                <div><img src="img/cantinho3.jpg" class="euImg" alt=""></div>
+
+            </div>
+            <div class="redesSociais" id="redes">
+                <h4>GilmarAlves@gmail.com</h4>
+                <h4>Gilmar Zezilia Alves </h4>
+
+                <h4>(13)99795-4520</h4>
+
+                <a href="https://github.com/GilmarAlves99" target="_blank">
+                    <i class="uil uil-github icons"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gilmar-zezilia-alves-336610182/" target="_blank">
+                    <i class="uil uil-linkedin icons"></i>
+                </a>
+                <a href="img/GilmarZeziliaAlves-Curriculo.pdf" download>
+                    <i class="uil uil-file-download-alt icons"></i>
+                </a>
+            </div>
+        </footer>
     </div>
 
     <script src="js/js-scroll.js"></script>
-
+    <script src="js/carousel.js"></script>
     <script src="js/mobile-menu-navbar.js"></script>
 
 
